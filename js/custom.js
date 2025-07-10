@@ -81,7 +81,7 @@ $(function () {
 
             1201: {
                 loop: true,
-                slidesPerView: 2,
+                slidesPerView: 3,
                 slidesPerGroup: 1,
                 spaceBetween: 30,
             },
