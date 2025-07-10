@@ -552,6 +552,10 @@
         transform: translate(0, -50%);
     }
 
+    .main_clean .itm {
+        max-height: 240px;
+    }
+
     .main_clean .itm .txt_box strong {
         font-size: 20px;
         line-height: 20px;
@@ -566,6 +570,7 @@
         line-height: 22px;
     }
 }
+
 
 /* 메인 재생에너지 */
 .main_renew {}
@@ -1021,6 +1026,27 @@
     opacity: 1;
     height: 122px;
     transition: 0.3s;
+}
+
+@media(max-width: 1400px) {
+    .footer .inner {
+        position: relative;
+    }
+
+    .footer .left {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .footer .left>ul::before {
+        display: none;
+    }
+
+    .footer .right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
 }
 
 
