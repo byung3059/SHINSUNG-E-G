@@ -543,7 +543,9 @@
         margin: 0;
     }
 
-    .main_clean .inner .left .tit p {}
+    .main_clean .main_clean_slide_nav {
+        margin: 0;
+    }
 
     .main_clean .inner .left .more_btn_wrap {
         position: absolute;
