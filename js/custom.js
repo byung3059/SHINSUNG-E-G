@@ -1,6 +1,7 @@
 $('main').fullpage({
     anchors: ['main_visual', 'main_clean', 'main_renew', 'main_sustain', 'main_merit', 'main_notice', 'footer'],
     responsiveWidth: 769,
+    recordHistory: false,
     scrollingSpeed: 850,
     easingcss3: 'cubic-bezier(.61,.01,.13,.95)',
     onLeave: function (name, idx) {
