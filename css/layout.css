@@ -1,0 +1,428 @@
+:root {
+    --pri-color: #7FC241;
+    --pri02-color: #0097DC;
+    --pri03-color: #F15E21;
+    --white-color: #ffffff;
+    --white-back-color: #F5F5F5;
+    --black-color: #222222;
+    --black-444-color: #444444;
+    --line-color: #dddddd;
+}
+
+/* 레이아웃 */
+body {
+    background: var(--white-back-color);
+}
+
+.inner {
+    max-width: 1530px;
+
+    margin: 0 auto;
+}
+
+
+/* page 애니메이션 */
+
+section:not(.fp-auto-height, .fadeout) .fp-tableCell {
+    transform: scale(0.9) translateY(0%);
+    transition: 0.3s;
+}
+
+section.active:not(.fp-auto-height) .fp-tableCell {
+    transform: scale(1) translateY(0%);
+    transition: 1.2s cubic-bezier(0.85, -0.08, 0.29, 0.93) 0.6s;
+}
+
+body #header,
+body #scroll_nav,
+body #aside {
+    opacity: 0;
+}
+
+body.show #header,
+body.show #scroll_nav,
+body.show #aside {
+    opacity: 1;
+    transition: 1s 0.5s;
+}
+
+
+/* 흰배경 섹션 */
+.sec_white>.fp-tableCell {
+    background: var(--white-back-color);
+}
+
+.sec_white .inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sec_white .inner .left {
+    flex: 1 0 620px;
+}
+
+.sec_white .inner .right {
+    width: 100%;
+    overflow: hidden;
+}
+
+.sec_white .tit {
+    margin: 0 0 32px 0;
+}
+
+.sec_white .tit span {
+    display: block;
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: var(--pri-color);
+    font-family: "Montserrat";
+}
+
+.sec_white .tit h2 {
+    position: relative;
+    margin: 0 0 50px 0;
+    font-size: 80px;
+    line-height: 88px;
+    font-weight: 700;
+    color: var(--black-color);
+    font-family: "Montserrat";
+}
+
+.sec_white .tit h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -17px;
+    width: 160px;
+    height: 1px;
+    background: var(--pri-color);
+}
+
+.sec_white .tit p {
+    margin: 0 0 32px 0;
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 300;
+    color: var(--black-444-color);
+}
+
+.sec_white .more_btn_p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid var(--pri-color);
+}
+
+.sec_white .more_btn_p::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.sec_white .more_btn_p:hover::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--pri-color);
+    transition: 0.3s;
+    border: 1px solid var(--pri-color);
+}
+
+.sec_white .more_btn_p .text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--pri-color);
+    font-family: "Montserrat";
+    transition: 0.3s;
+}
+
+.sec_white .more_btn_p .icon {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    background: url(../images/more_btn_p.svg)no-repeat;
+    transition: 0.3s;
+}
+
+.sec_white .more_btn_p:hover .text {
+    color: var(--white-color);
+}
+
+.sec_white .more_btn_p:hover .icon {
+    background-image: url(../images/more_btn_w.svg);
+    transition: 0.3s;
+}
+
+/* 배경 섹션 */
+.sec_basic .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sec_basic .inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.sec_basic .tit span {
+    display: block;
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: var(--white-color);
+    font-family: "Montserrat";
+}
+
+.sec_basic .tit h2 {
+    position: relative;
+    margin: 0 0 50px 0;
+    font-size: 80px;
+    line-height: 88px;
+    font-weight: 700;
+    color: var(--white-color);
+    font-family: "Montserrat";
+}
+
+.sec_basic .tit h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -17px;
+    width: 160px;
+    height: 1px;
+    opacity: 0.2;
+    background: var(--white-color);
+}
+
+.sec_basic .tit p {
+    font-size: 20px;
+    line-height: 28px;
+    font-weight: 300;
+    color: var(--white-color);
+}
+
+.sec_basic .more_btn_p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid var(--white-color);
+}
+
+.sec_basic .more_btn_p::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.sec_basic .more_btn_p:hover::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: var(--white-color);
+    transition: 0.3s;
+    border: 1px solid var(--white-color);
+}
+
+.sec_basic .more_btn_p .text {
+    position: relative;
+    z-index: 1;
+    display: block;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--white-color);
+    font-family: "Montserrat";
+    transition: 0.3s;
+}
+
+.sec_basic .more_btn_p .icon {
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-indent: -9999px;
+    background: url(../images/more_btn_w.svg)no-repeat;
+    transition: 0.3s;
+}
+
+.sec_basic .more_btn_p:hover .text {
+    color: var(--black-color);
+    transition: 0.3s;
+}
+
+.sec_basic .more_btn_p:hover .icon {
+    filter: invert(1);
+    transition: 0.3s;
+}
+
+/* 슬라이드 네비 */
+
+.arrow_wrap {
+    display: flex;
+    align-items: end;
+    gap: 116px;
+}
+
+.arrow_wrap .arrow {
+    position: relative;
+    width: 40px;
+    height: 12px;
+    text-indent: -9999px;
+}
+
+.arrow_wrap .arrow_prev::before {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    left: 0;
+    width: 20px;
+    height: 1px;
+    transform: rotate(-33deg);
+    background: var(--white-color);
+}
+
+.arrow_wrap .arrow_prev::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: var(--white-color);
+}
+
+.arrow_wrap .arrow_next::before {
+    content: '';
+    position: absolute;
+    bottom: 6px;
+    right: 0;
+    width: 20px;
+    height: 1px;
+    transform: rotate(33deg);
+    background: var(--white-color);
+}
+
+.arrow_wrap .arrow_next::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 1px;
+    background: var(--white-color);
+}
+
+.slide_page_line_wrap {
+    position: absolute;
+    bottom: 0;
+    left: 48px;
+    max-width: 100px;
+    width: 100%;
+    height: 1px;
+}
+
+#main .slide_page_line_wrap .slide_page_line {
+    text-indent: -9999px;
+    width: 100px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#main .slide_page_line_wrap .slide_page_line .swiper-pagination-progressbar-fill {
+    background: var(--white-color);
+}
+
+@media(max-width: 1850px) {
+    .inner {
+        width: calc(100% - 320px);
+    }
+}
+
+@media(max-width: 1690px) {
+    .inner {
+        gap: 30px;
+        width: calc(100% - 240px);
+    }
+}
+
+@media(max-width: 1500px) {
+    .sec_white .inner .left {
+        width: 50%;
+        flex: unset;
+    }
+
+    .sec_white .inner .right {
+        width: 50%;
+    }
+
+    .sec_white .tit h2 {
+        margin: 0 0 48px;
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    .sec_white .tit h2::after {
+        bottom: -24px;
+    }
+
+    .sec_white .tit p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+
+    .sec_basic .tit h2 {
+        margin: 0 0 48px;
+        font-size: 64px;
+        line-height: 64px;
+    }
+
+    .sec_basic .tit h2::after {
+        bottom: -24px;
+    }
+
+    .sec_basic .tit p {
+        font-size: 18px;
+        line-height: 26px;
+    }
+}
