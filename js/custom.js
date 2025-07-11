@@ -45,8 +45,6 @@ $(function () {
     const main_visual_slide = new Swiper('.main_visual_slide', {
         loop: true,
         parallax: true,
-        direction: "vertical",
-        autoHeight: true,
         speed: 1500,
         autoplay: {
             delay: 4000,
