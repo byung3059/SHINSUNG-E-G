@@ -44,7 +44,7 @@ $(function () {
 
     const main_visual_slide = new Swiper('.main_visual_slide', {
         loop: true,
-        parallax: true,
+        // parallax: true,
         speed: 1500,
         autoplay: {
             delay: 4000,
@@ -70,7 +70,7 @@ $(function () {
 
     const main_clean_slide = new Swiper('.main_clean_slide', {
 
-        // loop: true,
+        loop: true,
         slidesPerView: 1,
         slidesPerGroup: 1,
         spaceBetween: 16,

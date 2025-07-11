@@ -181,7 +181,7 @@ body.show #aside {
 /* 배경 섹션 */
 .sec_basic .top {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
 }
 

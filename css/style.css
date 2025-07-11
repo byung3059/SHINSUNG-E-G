@@ -373,6 +373,17 @@
     max-height: 100dvh;
 }
 
+.main_visual .itm::before {
+    content: '';
+    z-index: 9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
 .main_visual .itm .video_box {
     height: 100vh;
 }
@@ -386,14 +397,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.main_visual .itm .video_box::before {
-    content: '';
-    z-index: 9;
-    position: absolute;
-    inset: 0 0 0 0;
-    background: rgba(0, 0, 0, 0.4);
 }
 
 .main_visual .itm .slg {
