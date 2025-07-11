@@ -977,6 +977,16 @@
         aspect-ratio: unset;
     }
 
+    .main_merit .itm .txt_box strong {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .main_merit .itm .txt_box p {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
 }
 
 /* 메인 노티스 */
