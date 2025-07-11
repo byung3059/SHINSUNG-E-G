@@ -357,9 +357,12 @@
 
 /* 메인 비주얼 */
 
+
 .main_visual>.fp-tableCell {
     position: relative;
 }
+
+
 
 .main_visual .swiper-wrapper {
     transition-timing-function: cubic-bezier(1, 0, 0.5, 1) !important;
@@ -370,17 +373,11 @@
     max-height: 100dvh;
 }
 
-.main_visual .itm::before {
-    content: '';
-    z-index: 9;
-    position: absolute;
-    inset: 0 0 0 0;
-    background: rgba(0, 0, 0, 0.4);
-}
-
 .main_visual .itm .video_box {
     height: 100vh;
 }
+
+
 
 .main_visual .itm .video_box video {
     position: absolute;
@@ -391,8 +388,16 @@
     object-fit: cover;
 }
 
+.main_visual .itm .video_box::before {
+    content: '';
+    z-index: 9;
+    position: absolute;
+    inset: 0 0 0 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
 .main_visual .itm .slg {
-    z-index: 10;
+    z-index: 99;
     position: absolute;
     top: 50%;
     left: 50%;
