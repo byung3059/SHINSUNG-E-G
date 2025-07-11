@@ -1659,7 +1659,7 @@
     #sitemap .stiemap_menu {
         flex-direction: column;
         justify-content: center;
-        height: 100dvh;
+        height: calc(100dvh - 80px);
     }
 
     #sitemap .stiemap_menu>li>a {
@@ -1729,6 +1729,11 @@
 }
 
 @media(max-width: 480px) {
+    #sitemap .stiemap_menu {
+        padding: 60px 0 0 0;
+        height: calc(100dvh - 60px);
+    }
+
     #sitemap h2 {
         top: 14px;
         font-size: 32px;
@@ -1737,6 +1742,11 @@
 
     #sitemap .stiemap_del_btn {
         top: 18px;
+    }
+
+    #sitemap .sub_menu {
+        max-height: 214px;
+        overflow: auto;
     }
 
     #sitemap .stiemap_menu>li>a {
@@ -1753,11 +1763,16 @@
     }
 
     #sitemap .sub_menu>li>a {
-        line-height: 48px;
+        line-height: 47px;
     }
 }
 
 @media(max-width: 400px) {
+    #sitemap .sub_menu {
+        max-height: 180px;
+        overflow: auto;
+    }
+
     #sitemap .stiemap_menu>li>a {
         font-size: 16px;
         line-height: 48px;
@@ -1765,7 +1780,7 @@
 
     #sitemap .sub_menu>li>a {
         font-size: 12px;
-        line-height: 40px;
+        line-height: 39px;
     }
 }
 
