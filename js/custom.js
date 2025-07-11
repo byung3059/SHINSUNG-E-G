@@ -76,7 +76,7 @@ $(function () {
         spaceBetween: 16,
 
         breakpoints: {
-            380: {
+            600: {
                 loop: true,
                 slidesPerView: 2,
                 slidesPerGroup: 1,
@@ -153,7 +153,7 @@ $(function () {
         spaceBetween: 16,
 
         breakpoints: {
-            400: {
+            380: {
                 loop: true,
                 slidesPerView: 2,
                 slidesPerGroup: 1,
