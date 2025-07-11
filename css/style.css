@@ -365,7 +365,7 @@
 
 
 .main_visual .swiper-wrapper {
-    transition-timing-function: cubic-bezier(1, 0, 0.5, 1) !important;
+    /* transition-timing-function: cubic-bezier(1, 0, 0.5, 1) !important; */
 }
 
 .main_visual .itm {
