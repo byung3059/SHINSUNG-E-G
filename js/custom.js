@@ -1,38 +1,43 @@
-$('main').fullpage({
-    anchors: ['main_visual', 'main_clean', 'main_renew', 'main_sustain', 'main_merit', 'main_notice', 'footer'],
-    responsiveWidth: 1200,
-    recordHistory: false,
-    scrollingSpeed: 850,
-    easingcss3: 'cubic-bezier(.61,.01,.13,.95)',
-    onLeave: function (name, idx) {
-        $('#aside .lnb li').eq(idx - 1).addClass('on').siblings().removeClass('on');
-        $('#scroll_nav .num li').eq(idx - 1).addClass('on').siblings().removeClass('on');
-        $('#scroll_nav .sec_name li').eq(idx - 1).addClass('on').siblings().removeClass('on');
-        $('body').removeClass('show');
-        if (window.innerWidth > 1200) {
-            if (idx === 2 || idx === 4 || idx === 6) {
-                $('#header').addClass('on');
-                $('#aside').addClass('on');
-                $('#scroll_nav').addClass('on');
-            } else {
-                $('#header').removeClass('on');
-                $('#aside').removeClass('on');
-                $('#scroll_nav').removeClass('on');
+// 풀페이지 관련 //
+$(function () {
+    $('main').fullpage({
+        anchors: ['main_visual', 'main_clean', 'main_renew', 'main_sustain', 'main_merit', 'main_notice', 'footer'],
+        responsiveWidth: 1200,
+        recordHistory: false,
+        scrollingSpeed: 850,
+        easingcss3: 'cubic-bezier(.61,.01,.13,.95)',
+        onLeave: function (name, idx) {
+            $('#aside .lnb li').eq(idx - 1).addClass('on').siblings().removeClass('on');
+            $('#scroll_nav .num li').eq(idx - 1).addClass('on').siblings().removeClass('on');
+            $('#scroll_nav .sec_name li').eq(idx - 1).addClass('on').siblings().removeClass('on');
+            $('body').removeClass('show');
+            if (window.innerWidth > 1200) {
+                if (idx === 2 || idx === 4 || idx === 6) {
+                    $('#header').addClass('on');
+                    $('#aside').addClass('on');
+                    $('#scroll_nav').addClass('on');
+                } else {
+                    $('#header').removeClass('on');
+                    $('#aside').removeClass('on');
+                    $('#scroll_nav').removeClass('on');
+                }
+                if (idx === 7) {
+                    $('#header').hide();
+                } else {
+                    $('#header').show();
+                }
             }
-            if (idx === 7) {
-                $('#header').hide();
-            } else {
-                $('#header').show();
-            }
+
+        },
+
+        afterLoad: function (name, idx) {
+            $('body').addClass('show');
         }
+    });
+}
+)
 
-    },
-
-    afterLoad: function (name, idx) {
-        $('body').addClass('show');
-    }
-});
-
+// gnb 메뉴, 스와이퍼, 푸터 관련 //
 $(function () {
     $('#header .gnb').on('mouseover', function () {
         $('#header').addClass('gnb_enter');
@@ -40,6 +45,14 @@ $(function () {
 
     $('#header .gnb').on('mouseleave', function () {
         $('#header').removeClass('gnb_enter');
+    });
+
+    $('#header .sitemap_btn').on('click', function () {
+        $('#sitemap').addClass('on');
+    });
+
+    $('#sitemap .stiemap_del_btn').on('click', function () {
+        $('#sitemap').removeClass('on');
     });
 
     const main_visual_slide = new Swiper('.main_visual_slide', {
@@ -60,14 +73,12 @@ $(function () {
         },
 
         on: {
-            // 슬라이드가 이동되기전에 발생
             slideChangeTransitionStart: function () {
                 $('.main_visual_slide .swiper-slide-active video')[0].currentTime = 0;
                 $('.main_visual_slide .swiper-slide-active video')[0].play();
             },
         },
     });
-
     const main_clean_slide = new Swiper('.main_clean_slide', {
 
         loop: true,
@@ -188,11 +199,8 @@ $(function () {
         $('.footer .right .link_box>ul').toggleClass('on');
 
     });
-
-
-
 })
-
+// 반응형 //
 $(function () {
 
     if (window.innerWidth < 1200) {
@@ -205,5 +213,22 @@ $(function () {
                 $('#header').removeClass('on')
             }
         });
-    }
+    };
+
+    $('#sitemap .stiemap_menu>li>a').on('click', function (e) {
+        if (window.innerWidth < 769) {
+            $(this).parent().siblings().find('.sub_menu').stop().slideUp(300);
+            if ($(this).next().hasClass('sub_menu')) {
+                e.preventDefault();
+                $(this).next().stop().slideToggle(300);
+            }
+        };
+
+        if ($(this).hasClass('on')) {
+            $(this).removeClass('on');
+        } else {
+            $('#sitemap .stiemap_menu > li > a').removeClass('on');
+            $(this).addClass('on');
+        }
+    });
 })
